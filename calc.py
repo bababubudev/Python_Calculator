@@ -20,7 +20,7 @@ def store_history(str):
         history.append(str)
 
 
-def show_results(_calculation, _result, _missing_operator=False):
+def show_results(_calculation, _result, _missing_operator=False, _is_eval=False):
     if _missing_operator:
         output = f"[ {_calculation} = {_calculation} ]"
     else:
@@ -47,11 +47,13 @@ def main():
     while True:
         try:
             calculation = input("Input: ").lower()
+            better_result = eval(calculation)
+
+            result = 0
             operator_dic, value_dic = response_man.sort_input(calculation)
             operator_list = list(operator_dic)
             value_list = list(value_dic)
 
-            result = 0
             if not operator_list:
                 show_results(calculation, result, True)
                 continue

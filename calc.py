@@ -38,6 +38,7 @@ command_dic = {
     "Clear calculation history.": "clh",
     "List all the commands.": "cmdl",
     "Force end the program.": "fend",
+    "Play a snake game!": "gamer",
 }
 
 print(f"\nType \"cmdl\" to see the list of commands.")
@@ -48,7 +49,6 @@ def main():
     while True:
         try:
             calculation = input("Input: ").lower()
-            better_result = eval(calculation)
 
             result = 0
             operator_dic, value_dic = response_man.sort_input(calculation)
@@ -59,7 +59,6 @@ def main():
                 show_results(calculation, result, True)
                 continue
 
-            print()
             for i in range(len(operator_list)):
                 if i == 0:
                     result = ops[operator_dic[operator_list[i]]](
@@ -76,9 +75,11 @@ def main():
             want_to_pass = False
 
             #Close program#
+
             if calculation == command_dic[commands[0]].lower():
                 while (value == 0):
                     value = response_man.ask_response(calculation)
+
                     if value == -1:
                         want_to_pass = True
                     elif value == 1:
@@ -113,6 +114,9 @@ def main():
             #Force end the program#
             elif calculation == command_dic[commands[5]].lower():
                 print("\n[ FORCE ENDING! ]\n")
+                break
+            elif calculation == command_dic[commands[6]].lower():
+                import snakegame
                 break
             else:
                 print(

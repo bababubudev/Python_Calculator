@@ -1,3 +1,6 @@
+wants_to_rerun = False
+
+
 def sort_input(input_value) -> object:
     operators = ["+", "-", "*", "/", "^", "%"]
     num_value_dictionary = {}
@@ -34,6 +37,7 @@ def respond_response(str):
         else:
             print(
                 f"{str.capitalize()}? You mean { string.upper()}? Alright, whatever you say man.", end='')
+            wants_to_rerun = True
     elif value == -1:
         if len(str) == len(string):
             print(
@@ -41,6 +45,7 @@ def respond_response(str):
         else:
             print(
                 f"{str.capitalize()}? You mean {string.upper()} ?", end='')
+            wants_to_rerun = True
     else:
         print(
             f"Shit negro! Is \"{str.upper()}\" all you had to say?! Tell me again clearly mofo.", end='')

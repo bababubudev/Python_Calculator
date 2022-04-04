@@ -8,6 +8,7 @@ import respondToInput as response_man
 calculation = ""
 history = []
 ops = operatorList.ops
+wants_response = response_man.wants_to_rerun
 
 
 def clear():
@@ -58,6 +59,7 @@ def main():
                 show_results(calculation, result, True)
                 continue
 
+            print()
             for i in range(len(operator_list)):
                 if i == 0:
                     result = ops[operator_dic[operator_list[i]]](

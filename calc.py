@@ -74,8 +74,6 @@ def main():
             want_to_break = False
             want_to_pass = False
 
-            #Close program#
-
             if calculation == command_dic[commands[0]].lower():
                 while (value == 0):
                     value = response_man.ask_response(calculation)

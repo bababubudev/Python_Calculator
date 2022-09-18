@@ -48,7 +48,7 @@ def respond_response(str):
             wants_to_rerun = True
     else:
         print(
-            f"Shit negro! Is \"{str.upper()}\" all you had to say?! Tell me again clearly mofo.", end='')
+            f"Shit man! Is \"{str.upper()}\" all you had to say?! Tell me again clearly.", end='')
     print(" ] \n")
 
 

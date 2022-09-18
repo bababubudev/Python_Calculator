@@ -8,7 +8,6 @@ import respondToInput as response_man
 calculation = ""
 history = []
 ops = operatorList.ops
-wants_response = response_man.wants_to_rerun
 
 
 def clear():
@@ -87,10 +86,8 @@ def main():
                         want_to_break = True
                 if want_to_break:
                     break
-            #Clear screen#
             elif calculation == command_dic[commands[1]].lower():
                 clear()
-            #Check calculation history#
             elif calculation == command_dic[commands[2]].lower():
                 if history:
                     print("\n")
@@ -99,16 +96,13 @@ def main():
                     print("\n")
                 else:
                     print("Nothing to show in the history!\n")
-            #Clear calculation history#
             elif calculation == command_dic[commands[3]].lower():
                 history.clear()
                 print("History cleared.\n")
-            #List all the commands#
             elif calculation == command_dic[commands[4]].lower():
                 for cmd in commands:
                     print("[", command_dic[cmd], "] = ", cmd)
                 print("\n")
-            #Force end the program#
             elif calculation == command_dic[commands[5]].lower():
                 print("\n[ FORCE ENDING! ]\n")
                 break

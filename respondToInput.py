@@ -1,4 +1,4 @@
-wants_to_rerun = False
+n_response = 0
 
 
 def sort_input(input_value) -> object:
@@ -28,24 +28,32 @@ def sort_input(input_value) -> object:
 
 def respond_response(str):
     value, string = check_response(str)
+    global n_response
 
     print("\n[ ", end='')
     if value == 1:
         if len(str) == len(string):
             print(
-                f"Ok see you I guess. Fun fact! You could have just pressed the X up there to faster.", end='')
+                f"Ok byee.", end='')
         else:
             print(
                 f"{str.capitalize()}? You mean { string.upper()}? Alright, whatever you say man.", end='')
-            wants_to_rerun = True
     elif value == -1:
+        end_it = False
         if len(str) == len(string):
-            print(
-                f"Stop wasting my goddamn time with that {string} ass response!", end='')
+            if not end_it:
+                n_response += 1
+            if (n_response > 2):
+                print(
+                    f"Stop wasting my goddamn time with that {string} ass response!", end='')
+                n_response = 0
+                end_it = True
+            else:
+                print(
+                    f"What the hell... ok.", end='')
         else:
             print(
-                f"{str.capitalize()}? You mean {string.upper()} ?", end='')
-            wants_to_rerun = True
+                f"{str.capitalize()}? You mean {string.upper()} ? Aight.", end='')
     else:
         print(
             f"Shit man! Is \"{str.upper()}\" all you had to say?! Tell me again clearly.", end='')

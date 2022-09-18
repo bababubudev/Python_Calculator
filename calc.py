@@ -21,7 +21,7 @@ def store_history(str):
         history.append(str)
 
 
-def show_results(_calculation, _result, _missing_operator=False, _is_eval=False):
+def show_results(_calculation, _result, _missing_operator=False):
     if _missing_operator:
         output = f"[ {_calculation} = {_calculation} ]"
     else:
@@ -38,7 +38,6 @@ command_dic = {
     "Clear calculation history.": "clh",
     "List all the commands.": "cmdl",
     "Force end the program.": "fend",
-    "Play a snake game!": "gamer",
 }
 
 print(f"\nType \"cmdl\" to see the list of commands.")
@@ -112,9 +111,6 @@ def main():
             #Force end the program#
             elif calculation == command_dic[commands[5]].lower():
                 print("\n[ FORCE ENDING! ]\n")
-                break
-            elif calculation == command_dic[commands[6]].lower():
-                import snakegame
                 break
             else:
                 print(

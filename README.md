@@ -1,4 +1,4 @@
-# BetterPyCalculator
+# Python Calculator
 
 Better and well refactored code. Can calculate strings of numbers.
 Calculation is not done with order of operands in mind. Calculation is done moving forward through the string.
